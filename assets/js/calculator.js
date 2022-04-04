@@ -1,6 +1,8 @@
 function Enable(buttonElement){
     var submit = document.getElementById("submit");
     submit.disabled = false;
+    $("#submit").removeClass('btn-danger');
+    $("#submit").addClass('btn-success');
     console.log('value in enable function is ' + buttonElement)
 }
 function calc(){
@@ -21,6 +23,7 @@ function calc(){
         $("#submit").prop("disabled", true);
     }else if(!num1.match(onlyDigits)){
         output.innerHTML = '';
+        document.getElementById('num2Help').innerHTML = '';
         document.getElementById('num1Help').innerHTML = 'You must enter a number only!';
         $("#submit").removeClass('btn-success');
         $("#submit").addClass('btn-danger');
@@ -28,6 +31,7 @@ function calc(){
         $("#submit").prop("disabled", true);
     }else if(!num2.match(onlyDigits)){
         output.innerHTML = '';
+        document.getElementById('num1Help').innerHTML = '';
         document.getElementById('num2Help').innerHTML = 'You must enter a number only!';
         $("#submit").removeClass('btn-success');
         $("#submit").addClass('btn-danger');
