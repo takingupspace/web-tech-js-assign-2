@@ -12,12 +12,12 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>First Number:</label>
-            <input class="form-control" type="text" id="num1" />
+            <input class="form-control" type="text" id="num1" onkeyup="Enable(this)" />
             <p class="help-block" id="num1Help"></p>
           </div>
           <div class="form-group">
             <label>Second Number:</label>
-            <input class="form-control" type="text" id="num2" />
+            <input class="form-control" type="text" id="num2" onkeyup="Enable(this)" />
             <p class="help-block" id="num2Help"></p>
           </div>
           <div class="form-group">
@@ -33,7 +33,7 @@
             id="submit"
             class="btn btn-block btn-success"
             type="submit"
-            onclick="calc();"
+            onclick="multiply();"
           >
             Calculate
           </button>
