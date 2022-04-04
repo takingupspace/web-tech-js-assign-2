@@ -3,12 +3,13 @@ function Enable(buttonElement){
     submit.disabled = false;
     console.log('value in enable function is ' + buttonElement)
 }
-function multiply(){
+function calc(){
     var num1 = document.getElementById("num1").value;
     var num2 = document.getElementById("num2").value;
     var answer;
     var onlyDigits=/^\d+$/;
     var output = document.getElementById('answer');
+    var operator = document.getElementById("funct");
     if(!num1.match(onlyDigits) && !num2.match(onlyDigits)){
         output.innerHTML = '';
         document.getElementById('num1Help').innerHTML = 'You must enter a number only!';
@@ -38,7 +39,25 @@ function multiply(){
         output.innerHTML = '';
         document.getElementById('num1Help').innerHTML = '';
         document.getElementById('num2Help').innerHTML = '';
-        answer = num1 * num2;
-        output.innerHTML = '<h1>The answer is: ' + answer + '</h2>';
+        var operatorString = operator.value.toString()
+        console.log('operator is ' + operatorString)
+        switch(operatorString){
+            case 'multiply':
+                answer = (parseInt(num1) * parseInt(num2));
+                output.innerHTML = '<h1>The answer is: ' + answer; + '</h2>';
+                break;
+            case 'add':
+                answer = (parseInt(num1) + parseInt(num2));
+                output.innerHTML = '<h1>The answer is: ' + answer; + '</h2>';
+                break;
+            case 'subtract':
+                answer = (parseInt(num1) - parseInt(num2));
+                output.innerHTML = '<h1>The answer is: ' + answer; + '</h2>';
+                break;
+            case 'divide':
+                answer = (parseInt(num1) / parseInt(num2));
+                output.innerHTML = '<h1>The answer is: ' + answer.toFixed(4); + '</h2>';
+                break;
+        }
     }
 }
